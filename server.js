@@ -14,13 +14,15 @@ app.listen(PORT,()=>{
 });
 
 
+
+//connected app to MOngoDB using Mongoose
 const dotenv=require("dotenv")
-dotenc.config();
+dotenv.config();
 const DATABASE_URL =process.env.DATABASE_URL;
-mongoose.connect(DATABASE_URL,{useNewParser:true,useUnifiedTopology:true})
+mongoose.connect(DATABASE_URL,{useNewUParser:true,useUnifiedTopology:true})
 .then(()=>{
   console.log("Server is connected to db")
 })
-.catchError((err)=>{
-  console.log("Error connecting to DB:",error)
+.catch((error)=>{
+  console.error("Error connecting to DB:",error)
 });
