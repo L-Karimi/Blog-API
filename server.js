@@ -1,9 +1,14 @@
-console.log('May Node be with you')
+const express = require("express");
+const mongoose = require("mongoose");
+const app =express();
 
 
-const express = require('express');
-const app = express();
+app.get('/',(req,res)=>{
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
-  })
+  res.send("Hello my name is Lucy and am tryna practise this thing ")
+});
+
+const PORT =process.env.PORT || 3000;
+app.listen(PORT,()=>{
+  console.log("Server is running on ${PORT}");
+});
