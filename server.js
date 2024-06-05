@@ -8,7 +8,7 @@ app.get('/',(req,res)=>{
   res.send("Hello my name is Lucy and am tryna practise this thing ")
 });
 
-const PORT =process.env.PORT || 3000;
+const PORT =process.env.PORT || 8080;
 app.listen(PORT,()=>{
   console.log("Server is running on ${PORT}");
 });
@@ -19,7 +19,7 @@ app.listen(PORT,()=>{
 const dotenv=require("dotenv")
 dotenv.config();
 const DATABASE_URL =process.env.DATABASE_URL;
-mongoose.connect(DATABASE_URL,{useNewUParser:true,useUnifiedTopology:true})
+mongoose.connect(DATABASE_URL,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{
   console.log("Server is connected to db")
 })
