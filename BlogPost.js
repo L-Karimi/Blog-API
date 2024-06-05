@@ -1,8 +1,9 @@
 const mongoose =require('mongose')
 const blogPostSchema= new mongoose.schema({
-    commenter:String,
-    text:String,
-    blogPost:{type:blogPostSchema.objectId,ref:'BlogPost'},
+    title:String,
+    content:String,
+    tags:[String],
+    author:{type:mongoose.Schema.types.objecetsId,ref:'User'},
     creationDate:{type:Date,default:Date.now},
 })
 module.exports=mongoose.model
